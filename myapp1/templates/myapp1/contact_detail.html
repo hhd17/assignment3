@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Details</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+<body class="container">
+    <h1>Contact Details</h1>
+    <p>Name: {{ contact.name }}</p>
+    <p>Gender: {{ contact.gender }}</p>
+    <p>Address: {{ contact.address }}</p>
+    <p>Profession: {{ contact.profession }}</p>
+    <p>Telephone: {{ contact.telephone }}</p>
+    <p>Email: {{ contact.email }}</p>
+	<p>Birthday: {{ contact.birthday }}</p>
+    <a href="{% url 'myapp1:update_contact' contact.pk %}" class="submit-button">Edit</a>
+    <a href="{% url 'myapp1:delete_contact' contact.pk %}" class="submit-button">Delete</a>
+	<a href="{% url 'myapp1:contact_list' %}" class="submit-button">Back</a>
+</body>
+</html>

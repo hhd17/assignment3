@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Lists</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+<body class="container">
+    <h1>Contact Lists</h1>
+    <ul>
+        {% for contact in contact_lists %}
+            <li>
+                    <div style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #ccc;">
+                        <span style="flex: 1;">
+                            <a href="{% url 'myapp1:contact_detail' contact.pk %}" class="view-link">{{ contact.name }}</a>
+                        </span>
+                        <span style="white-space: nowrap;">
+                            <a href="{% url 'myapp1:update_contact' contact.pk %}" style="background-color: #007bff; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; font-weight: bold; margin-right: 10px;">Edit</a>
+                            <a href="{% url 'myapp1:delete_contact' contact.pk %}" style="background-color: #007bff; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; font-weight: bold;">Delete</a>
+                        </span>
+                    </div>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'myapp1:home' %}" class="submit-button">Home</a>
+</body>
+</html>

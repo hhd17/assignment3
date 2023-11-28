@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Lists</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+<body class="container">
+    <h1>Contact Lists</h1>
+    <a href="{% url 'myapp1:create_contact' %}" class="home-button">Add New Contact</a>
+    <a href="{% url 'myapp1:contact_list' %}" class="home-button">View Current Contacts</a>
+</body>
+</html>

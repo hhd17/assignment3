@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Form Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"]{
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <h1>Contact Form</h1>
+    <label for="formID">ID:</label>
+    {{ form.formID }}
+    
+    <label for="name">Name:</label>
+    {{ form.name }}
+    
+    <label for="gender">Gender:</label>
+    {{ form.gender }}
+    
+    <label for="address">Address:</label>
+    {{ form.address }}
+    
+    <label for="profession">Profession:</label>
+    {{ form.profession }}
+    
+    <label for="telephone">Telephone:</label>
+    {{ form.telephone }}
+    
+    <label for="email">Email:</label>
+    {{ form.email }}
+	
+    <label for="birthday">Birthday:</label>
+    {{ form.birthday }}
+    
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
